@@ -1,8 +1,8 @@
-# 🚀 Đạt Nguyễn - Portfolio Website
+# 🚀 Đạt Tô - Portfolio Website
 
 ## 📋 Giới thiệu
 
-Đây là trang portfolio cá nhân của Đạt Nguyễn - Full Stack Developer & UI/UX Designer. Website được thiết kế với giao diện hiện đại, responsive và tối ưu trải nghiệm người dùng.
+Đây là trang portfolio cá nhân của Đạt Tô - Full Stack Developer & UI/UX Designer. Website được thiết kế với giao diện hiện đại, responsive và tối ưu trải nghiệm người dùng.
 
 ## ✨ Tính năng
 
@@ -201,7 +201,7 @@ MIT License - Tự do sử dụng cho mục đích cá nhân và thương mại.
 
 ## 👨‍💻 Tác giả
 
-**Đạt Nguyễn**
+**Đạt Tô**
 
 - Website: [datjpro.github.io](https://datjpro.github.io)
 - Email: datjpro@gmail.com
