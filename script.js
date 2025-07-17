@@ -3,7 +3,8 @@ function scrollToSection(id) {
   const element = document.getElementById(id);
   if (element) {
     const navHeight = document.querySelector(".navbar").offsetHeight;
-    const elementPosition = element.offsetTop - navHeight;
+    // Thêm thêm 20px để có khoảng cách thoải mái
+    const elementPosition = element.offsetTop - navHeight - 20;
 
     window.scrollTo({
       top: elementPosition,
@@ -30,7 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Close menu when clicking on nav links
     navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault(); // Ngăn chặn hành vi mặc định
+
+        const targetId = link.getAttribute("href").substring(1); // Lấy ID từ href (bỏ #)
+        scrollToSection(targetId); // Scroll đến section
+
         navMenu.classList.remove("active");
         hamburger.classList.remove("active");
       });
@@ -53,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const navHeight = navbar.offsetHeight;
 
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop - navHeight - 100;
+      const sectionTop = section.offsetTop - navHeight - 50; // Giảm offset để detect sớm hơn
       const sectionHeight = section.offsetHeight;
 
       if (
@@ -71,6 +77,31 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+});
+
+// ===== ADDITIONAL NAVIGATION SETUP =====
+document.addEventListener("DOMContentLoaded", function () {
+  // Đảm bảo tất cả navigation links hoạt động
+  const allNavLinks = document.querySelectorAll('a[href^="#"]');
+
+  allNavLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+
+      if (targetId) {
+        scrollToSection(targetId);
+      }
+    });
+  });
+
+  // Test nhanh để đảm bảo About section tồn tại
+  const aboutSection = document.getElementById("about");
+  if (aboutSection) {
+    console.log("About section found successfully");
+  } else {
+    console.error("About section not found!");
+  }
 });
 
 // ===== CV DOWNLOAD =====
